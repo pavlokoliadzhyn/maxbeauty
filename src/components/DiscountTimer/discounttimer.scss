@@ -1,0 +1,35 @@
+.timer-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--Cultured);
+
+  .action-text {
+    .discount {
+      font-size: 14px;
+      list-style: 1.4;
+      color: var(--Black);
+    }
+    .timer {
+      font-size: 18px;
+      color: var(--Black);
+      font-weight: 900;
+    }
+  }
+
+  .get-plan {
+    button {
+      padding: 0 20px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: var(--White);
+      font-weight: 700;
+      background: var(--Majorelle-Blue);
+      border: 0px;
+      border-radius: 5px;
+    }
+  }
+}

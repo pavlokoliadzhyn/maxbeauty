@@ -1,0 +1,23 @@
+.benefit-list {
+  padding: 15px;
+  background: rgba($color: #c9cdf2, $alpha: 0.25);
+  border-radius: 10px;
+
+  .heading-box {
+    margin: 0 0 15px 0;
+
+    .title {
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--Black);
+      text-align: center;
+    }
+  }
+
+  .benefit-item {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 10px 0;
+  }
+}

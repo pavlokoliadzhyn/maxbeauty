@@ -1,0 +1,27 @@
+.logo-box {
+  padding: 15px 15px;
+  background: var(--Cultured);
+  border-radius: 10px;
+
+  .heading-box {
+    .title {
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: var(--Black);
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+  }
+
+  .logo-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 0;
+    align-items: center;
+    justify-content: space-between;
+    .logo-item {
+      width: auto;
+    }
+  }
+}

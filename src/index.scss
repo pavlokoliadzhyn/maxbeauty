@@ -1,0 +1,51 @@
+:root {
+  width: 100%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --Majorelle-Blue: #6c35d2;
+  --Taupe-Gray: #8f878b;
+  --Violets-Are-Blue: #9c6bff;
+  --Soap: #c9cdf2;
+  --Bright-Gray: #eceaef;
+  --Cultured: #f6f6f6;
+  --Black: #000;
+  --White: #fff;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+button:hover,
+button:active,
+button:focus {
+  outline: none !important;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 480px;
+  padding: 0 15px;
+  margin: 0 auto;
+}

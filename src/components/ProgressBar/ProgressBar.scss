@@ -1,0 +1,22 @@
+.progress-bar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  background: rgba(236, 234, 239, 0.5);
+  overflow: hidden;
+  height: 4px;
+
+  .line {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--Majorelle-Blue);
+    transition: 600ms;
+    border-radius: 5px;
+  }
+}

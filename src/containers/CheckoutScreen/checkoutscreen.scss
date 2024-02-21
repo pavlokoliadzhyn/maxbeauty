@@ -1,0 +1,121 @@
+.checkout-box {
+  .container {
+    padding: 0 0;
+  }
+
+  .timer-box {
+    padding: 10px 25px;
+    margin: 0 0 25px 0;
+  }
+
+  .graph-box {
+    padding: 0 25px;
+    margin: 0 0 25px 0;
+
+    .heading-box {
+      .title {
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: var(--Black);
+        margin: 0 0 25px 0;
+        text-align: center;
+      }
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .price-box {
+    margin: 0 0 25px 0;
+    padding: 0 25px;
+
+    .heading-box {
+      .title {
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: var(--Black);
+        margin: 0 0 20px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .featured-box {
+    padding: 0 25px;
+    margin: 0 0 25px 0;
+  }
+  .benefit-box {
+    padding: 0 25px;
+    margin: 0 0 15px 0;
+  }
+
+  .number-box {
+    padding: 0 25px;
+    margin: 0 0 25px 0;
+    .heading-box {
+      .title {
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: var(--Black);
+        margin: 0 0 10px 0;
+        text-align: center;
+        span {
+          color: var(--Majorelle-Blue);
+        }
+      }
+    }
+    .image {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 25px 0;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .faq-box {
+    padding: 0px 25px;
+    margin: 0 0 25px 0;
+    .heading-box {
+      .title {
+        font-size: 26px;
+        line-height: 1.4;
+        font-weight: 900;
+        color: var(--Black);
+        margin: 0 0 25px 0;
+        text-align: center;
+      }
+    }
+  }
+  .review-box {
+    padding: 25px 25px;
+    background: var(--Cultured);
+
+    .heading-box {
+      .title {
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 900;
+        color: var(--Black);
+        margin: 0 0 25px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .money-back-box {
+    padding: 0 25px;
+  }
+}
