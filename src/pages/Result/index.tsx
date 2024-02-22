@@ -1,8 +1,15 @@
+import {useNavigate} from "react-router-dom";
 import {AppHeader} from "../../containers";
-import {StarIcon} from "../../components";
+import {ContinueButton} from "../../components/Button/ContinueButton";
+
 import "./Result.scss";
 
 export const ResultPage = () => {
+  const navigate = useNavigate();
+  const onClickNextScreen = () => {
+    navigate("/email", {replace: true});
+  };
+
   return (
     <>
       <AppHeader></AppHeader>
@@ -51,22 +58,12 @@ export const ResultPage = () => {
               </div>
             </div>
           </div>
-
-          <div className="review-list">
-            <div className="title-box">
-              <div className="title">Trusted by 11,756 clients</div>
-              <div className="stars">
-                <StarIcon></StarIcon>
-                <StarIcon></StarIcon>
-                <StarIcon></StarIcon>
-                <StarIcon></StarIcon>
-                <StarIcon></StarIcon>
-              </div>
-            </div>
-            <div className="review-item"></div>
-          </div>
         </div>
       </div>
+      <ContinueButton
+        buttonText="Continue"
+        onClickItem={onClickNextScreen}
+      ></ContinueButton>
     </>
   );
 };

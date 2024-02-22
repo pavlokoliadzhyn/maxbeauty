@@ -17,8 +17,11 @@ export const AppFooter = () => {
             <div className="container">
               <p className="copyright">
                 2024 @ All Rights Reserved. By continuing you agree to our{" "}
-                <NavLink to="/terms-of-use">Terms of use</NavLink> | Privacy
-                Policy | Money Back Policy | Subscription Terms
+                <NavLink to="/terms-of-use">Terms of use</NavLink> |{" "}
+                <NavLink to="/privacy-policy">Privacy Policy</NavLink> |{" "}
+                <NavLink to="/money-back-policy">Money Back Policy</NavLink> |{" "}
+                <NavLink to="/subscription-terms">Subscription Terms</NavLink> |{" "}
+                <NavLink to="/cookie-policy">Cookie policy</NavLink>
               </p>
             </div>
           </footer>

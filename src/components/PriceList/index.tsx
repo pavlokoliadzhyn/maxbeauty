@@ -1,6 +1,12 @@
+import {NavLink, useNavigate} from "react-router-dom";
 import "./pricelist.scss";
 
 export const PriceList = () => {
+  const navigate = useNavigate();
+  const onClickNextScreen = () => {
+    navigate("/registration", {replace: true});
+  };
+
   return (
     <>
       <div className="price-box">
@@ -56,11 +62,12 @@ export const PriceList = () => {
             standard rate of $29.99. This recurring charge will continue until
             you opt to cancel. You can manage or cancel your subscription at any
             time by contacting our customer support team via email at
-            support@themaxbeauty.com. Subscription Policy.
+            support@themaxbeauty.com.{" "}
+            <NavLink to="/subscription-terms">Subscription Policy</NavLink>.
           </div>
         </div>
         <div className="get-plan">
-          <button>Continue</button>
+          <button onClick={onClickNextScreen}>Continue</button>
         </div>
       </div>
     </>

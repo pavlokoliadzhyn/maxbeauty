@@ -12,7 +12,7 @@ export type QuizType = {
   question?: string;
   subDescription?: string;
   description?: string;
-  type?: "radio" | "checkbox";
+  type?: string;
   answers?: QuizAnswer[] | [];
   data?: {
     image?: string;
@@ -20,6 +20,7 @@ export type QuizType = {
     subTitle?: string;
     text?: string;
     additionText?: string;
+    graphTitle?: string;
   };
   info?: {
     imageUrl?: boolean;

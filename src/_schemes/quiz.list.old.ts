@@ -25,6 +25,9 @@ import imageQ8_3 from "../assets/quiz/q8/a3.png";
 import imageQ8_4 from "../assets/quiz/q8/a4.png";
 import imageQ8_5 from "../assets/quiz/q8/a5.png";
 import imageQ8_6 from "../assets/quiz/q8/a6.png";
+import imageQ9_1 from "../assets/quiz/q9/a1.png";
+import imageQ9_2 from "../assets/quiz/q9/a2.png";
+import imageQ9_3 from "../assets/quiz/q9/a3.png";
 import imageTeaser1 from "../assets/quiz/teaser/teaser_1.png";
 import imageQ11_1 from "../assets/quiz/q11/a1.png";
 import imageQ11_2 from "../assets/quiz/q11/a2.png";
@@ -42,7 +45,14 @@ import imageQ23_4 from "../assets/quiz/q23/a4.png";
 import imageQ23_5 from "../assets/quiz/q23/a5.png";
 import imageQ23_6 from "../assets/quiz/q23/a6.png";
 
-import imageTeaserFinalStep from "../assets/quiz/teaser/teaser_final_step.png";
+import imageInfoQ24 from "../assets/quiz/q24/info.png";
+
+import imageQ34_1 from "../assets/quiz/q34/a1.png";
+import imageQ34_2 from "../assets/quiz/q34/a2.png";
+import imageQ34_3 from "../assets/quiz/q34/a3.png";
+import imageQ34_4 from "../assets/quiz/q34/a4.png";
+import imageQ34_5 from "../assets/quiz/q34/a5.png";
+import imageQ34_6 from "../assets/quiz/q34/a6.png";
 
 import {QuizType} from "../types";
 
@@ -73,7 +83,7 @@ export const quizList: QuizType[] = [
   {
     name: "Quiz",
     question: "To start, tell us what are you primarily focused on now?",
-    type: "radio",
+    type: "checkbox",
     index: 1,
     route: "quiz",
     isHideBtnNextScreen: true,
@@ -88,26 +98,9 @@ export const quizList: QuizType[] = [
   },
   {
     name: "Quiz",
-    question: "What worries you the most?",
-    type: "radio",
-    index: 2,
-    route: "quiz",
-    isHideBtnNextScreen: true,
-    answers: [
-      {icon: "", text: "Wrinkles or fine lines"},
-      {icon: "", text: "Facial contour changes"},
-      {icon: "", text: "Skin imperfections"},
-      {icon: "", text: "Puffiness or eye bags"},
-      {icon: "", text: "Hair loss or other hair problems"},
-      {icon: "", text: "Difficulties with make-up"},
-      {icon: "", text: "I’m not sure!"},
-    ],
-  },
-  {
-    name: "Quiz",
     question: "Are you satisfied with your current skin condition?",
     type: "radio",
-    index: 3,
+    index: 2,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
@@ -129,7 +122,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "What is your <span>skin type?</span>",
     type: "radio",
-    index: 4,
+    index: 3,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
@@ -154,12 +147,37 @@ export const quizList: QuizType[] = [
         text: "Combination skin type",
       },
     ],
-    info: {
-      icon: "😍",
-      text: "Did you know that people can achieve naturally young skin by changing their skincare regime as well as their diet and lifestyle regardless from age.",
-    },
   },
-
+  {
+    name: "Quiz",
+    question: "Choose the closest definition",
+    type: "radio",
+    index: 4,
+    route: "quiz",
+    isHideBtnNextScreen: false,
+    answers: [
+      {
+        imageUrl: true,
+        icon: imageQ3_1,
+        text: "<strong>Oily skin</strong> has a glossy shine and visible pores",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ3_2,
+        text: "<strong>Dry skin</strong> can feel tight and rough and look dull",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ3_3,
+        text: "<strong>Normal skin</strong> is well balanced: neither too oily nor too dry",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ3_4,
+        text: "Skin types vary between the T-zone and the cheeks on <strong>combination skin</strong>",
+      },
+    ],
+  },
   {
     name: "Quiz",
     question: "What are your skin concerns?",
@@ -240,8 +258,7 @@ export const quizList: QuizType[] = [
   },
   {
     name: "Quiz",
-    question:
-      "Which of the following products are <span>included into your routine?</span>",
+    question: "Which of the following products are included into your routine?",
     subDescription: "Select all the options that apply to you",
     type: "checkbox",
     index: 7,
@@ -336,19 +353,8 @@ export const quizList: QuizType[] = [
     ],
   },
   {
-    name: "Teaser",
-    index: 8.1,
-    route: "quiz",
-    isHideBtnNextScreen: true,
-    data: {
-      image: imageTeaser1,
-      title: "You’re not alone!",
-      text: "According to the World Health Organisation, skin diseases affect almost 900 million people worldwide",
-    },
-  },
-  {
     name: "Quiz",
-    question: "Do you think your skin is well moisturized?",
+    question: "Lastly, how sensitive is your skin?",
     type: "radio",
     index: 9,
     route: "quiz",
@@ -356,25 +362,31 @@ export const quizList: QuizType[] = [
     answers: [
       {
         imageUrl: true,
-        icon: imageQ11_1,
-        text: "Yes",
+        icon: imageQ9_1,
+        text: "High sensitivity",
       },
       {
         imageUrl: true,
-        icon: imageQ11_2,
-        text: "Sometimes feel tightness",
+        icon: imageQ9_2,
+        text: "Moderate sensitivity",
       },
       {
         imageUrl: true,
-        icon: imageQ11_3,
-        text: "No, can’t live without moisturizer",
-      },
-      {
-        imageUrl: true,
-        icon: imageQ11_4,
-        text: "I don’t know",
+        icon: imageQ9_3,
+        text: "Non-sensitive",
       },
     ],
+  },
+  {
+    name: "Teaser",
+    index: 9.1,
+    route: "quiz",
+    isHideBtnNextScreen: true,
+    data: {
+      image: imageTeaser1,
+      title: "You’re not alone!",
+      text: "According to the World Health Organisation, skin diseases affect almost 900 million people worldwide",
+    },
   },
   {
     name: "Quiz",
@@ -408,7 +420,36 @@ export const quizList: QuizType[] = [
       text: "<strong>Hydration is crucial for anti-aging</strong> as it plumps the skin, reduces the appearance of wrinkles, and maintains a youth",
     },
   },
-
+  {
+    name: "Quiz",
+    question: "Do you think your skin is well moisturized?",
+    type: "radio",
+    index: 11,
+    route: "quiz",
+    isHideBtnNextScreen: false,
+    answers: [
+      {
+        imageUrl: true,
+        icon: imageQ11_1,
+        text: "Yes",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ11_2,
+        text: "Sometimes feel tightness",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ11_3,
+        text: "No, can’t live without moisturizer",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ11_4,
+        text: "I don’t know",
+      },
+    ],
+  },
   {
     name: "Quiz",
     question:
@@ -416,7 +457,7 @@ export const quizList: QuizType[] = [
     description:
       "With our personalized program, you can reverse your skin problems in the most efficient way.",
     type: "radio",
-    index: 11,
+    index: 12,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
@@ -441,7 +482,7 @@ export const quizList: QuizType[] = [
     description:
       "A steady supply of key nutrients is essential for maintaining healthy and glowing beauty.",
     type: "radio",
-    index: 12,
+    index: 13,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -467,7 +508,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How often do you visit a cosmetologist or esthetician?",
     type: "radio",
-    index: 13,
+    index: 14,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
@@ -491,7 +532,7 @@ export const quizList: QuizType[] = [
   },
   {
     name: "TeaserGraph",
-    index: 13.1,
+    index: 14.1,
     route: "quiz",
     isHideBtnNextScreen: true,
     data: {
@@ -506,7 +547,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How much sleep do you usually get?",
     type: "radio",
-    index: 14,
+    index: 15,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
@@ -532,7 +573,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "Is there anything you want to improve about your sleep?",
     type: "radio",
-    index: 15,
+    index: 16,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -568,11 +609,10 @@ export const quizList: QuizType[] = [
   },
   {
     name: "Quiz",
-    question: "How has your mental health been lately?",
-    description:
+    question:
       "Other factors like stress, sleep, or  diet may be affecting your beauty. How has your mental health been lately?",
     type: "radio",
-    index: 16,
+    index: 17,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -614,7 +654,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "Do you wear <span>sunscreen outdoors?</span>",
     type: "radio",
-    index: 17,
+    index: 18,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -646,19 +686,23 @@ export const quizList: QuizType[] = [
   },
   {
     name: "Quiz",
-    question: "Have you noticed any age-related changes?",
+    question: "Do you believe that anti-aging works?",
     type: "radio",
-    index: 18,
+    index: 19,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
       {
-        icon: "😰",
-        text: "Yes",
+        icon: "😍",
+        text: "Yes, 100%",
       },
       {
-        icon: "😎",
-        text: "No",
+        icon: "🥲",
+        text: "I don’t really know much about anti-aging routines",
+      },
+      {
+        icon: "😰",
+        text: "No, I've already tried a lot of things",
       },
     ],
   },
@@ -666,7 +710,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How do you handle aging signs?",
     type: "radio",
-    index: 19,
+    index: 20,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -700,7 +744,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "Have you ever noticed any hyperpigmentation or saggy skin?",
     type: "radio",
-    index: 20,
+    index: 21,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -731,7 +775,7 @@ export const quizList: QuizType[] = [
     question:
       "Besides skin, are you satisfied with your current hair condition?",
     type: "radio",
-    index: 21,
+    index: 22,
     route: "quiz",
     isHideBtnNextScreen: false,
     answers: [
@@ -753,7 +797,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How would you describe the appearance of your hair",
     type: "radio",
-    index: 22,
+    index: 23,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -793,7 +837,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "Do you have any hair loss issues / concerns?",
     type: "radio",
-    index: 23,
+    index: 24,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -815,7 +859,8 @@ export const quizList: QuizType[] = [
       },
     ],
     info: {
-      icon: "😰",
+      imageUrl: true,
+      icon: imageInfoQ24,
       text: "According to many studies, <strong>40% of women experience signs of hair thinning by age 50</strong>",
     },
   },
@@ -823,7 +868,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How do you typically style your hair on a daily basis?",
     type: "radio",
-    index: 24,
+    index: 25,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -845,15 +890,78 @@ export const quizList: QuizType[] = [
       },
     ],
     info: {
-      icon: "🥵",
+      icon: "😰",
       text: "<strong>Applying heat to our hair weakens its outer layer</strong>, potentially leading to dryness, dullness, split ends, and hair breakage",
     },
   },
   {
     name: "Quiz",
+    question: "How often do you wash your hair?",
+    type: "radio",
+    index: 26,
+    route: "quiz",
+    isHideBtnNextScreen: true,
+    answers: [
+      {
+        icon: "",
+        text: "Every day",
+      },
+      {
+        icon: "",
+        text: "Every 2-3 days",
+      },
+      {
+        icon: "",
+        text: "Once a week",
+      },
+      {
+        icon: "",
+        text: "Less than once a week",
+      },
+    ],
+  },
+  {
+    name: "Quiz",
+    question:
+      "Do you have something that will motivate you to learn more about skin, hair and nails?",
+    subDescription:
+      "People with extra motivation are usually more likely to reach their goal",
+    type: "radio",
+    index: 27,
+    route: "quiz",
+    isHideBtnNextScreen: true,
+    answers: [
+      {
+        icon: "",
+        text: "I want to look younger to feel confident",
+      },
+      {
+        icon: "",
+        text: "I want to use less cosmetics",
+      },
+      {
+        icon: "",
+        text: "I want to impress people around me",
+      },
+      {
+        icon: "",
+        text: "I’m afraid my partner will break up with me",
+      },
+      {
+        icon: "",
+        text: "I want to prevent aging ",
+      },
+      {
+        icon: "",
+        text: "I want to create my own beauty ritual",
+      },
+    ],
+  },
+  {
+    name: "Quiz",
     question: "How often do you wear makeup?",
     type: "radio",
-    index: 25,
+    index: 28,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -879,7 +987,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How would you describe your daily makeup routine?",
     type: "radio",
-    index: 26,
+    index: 29,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -905,7 +1013,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "How do you usually remove your makeup?",
     type: "radio",
-    index: 27,
+    index: 30,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -931,7 +1039,7 @@ export const quizList: QuizType[] = [
     name: "Quiz",
     question: "Have you ever felt the need to hide your skin under makeup?",
     type: "radio",
-    index: 28,
+    index: 31,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -960,7 +1068,7 @@ export const quizList: QuizType[] = [
     description:
       "Did you know that almost 80% of women struggle to find the right makeup products for their skin type and to look young?",
     type: "radio",
-    index: 29,
+    index: 32,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -987,7 +1095,7 @@ export const quizList: QuizType[] = [
     question:
       "Are you interested in learning new anti-aging makeup techniques?",
     type: "radio",
-    index: 30,
+    index: 33,
     route: "quiz",
     isHideBtnNextScreen: true,
     answers: [
@@ -1013,10 +1121,18 @@ export const quizList: QuizType[] = [
       text: "<strong>Anti-aging makeup techniques</strong> emphasize hydration, light-reflecting products, and natural colors to reduce fine lines and boost youthfulness",
     },
   },
-
+  {
+    name: "TeaserCalculating",
+    index: 33.1,
+    route: "quiz",
+    isHideBtnNextScreen: true,
+    data: {
+      text: "Just a moment...<br/>We’re almost there",
+    },
+  },
   {
     name: "TeaserFinish",
-    index: 30.1,
+    index: 33.2,
     route: "quiz",
     isHideBtnNextScreen: true,
     data: {
@@ -1027,11 +1143,75 @@ export const quizList: QuizType[] = [
   },
   {
     name: "Quiz",
-    question: "How quickly do you want to look young and healthy?",
+    question: "During my MaxBeauty journey, i’d like to feel:",
     type: "radio",
-    index: 31,
+    index: 34,
     route: "quiz",
     isHideBtnNextScreen: false,
+    answers: [
+      {
+        imageUrl: true,
+        icon: imageQ34_1,
+        text: "Happy",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ34_2,
+        text: "Calm and relaxed",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ34_3,
+        text: "Energetic",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ34_4,
+        text: "In control of my choices",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ34_5,
+        text: "Empowered",
+      },
+      {
+        imageUrl: true,
+        icon: imageQ34_6,
+        text: "Other",
+      },
+    ],
+  },
+  {
+    name: "Quiz",
+    question: "What period of the day are you most likely to take our actions?",
+    type: "radio",
+    index: 35,
+    route: "quiz",
+    isHideBtnNextScreen: true,
+    answers: [
+      {
+        icon: "😎",
+        text: "Both, my beauty needs the full treatment, morning and night",
+      },
+      {
+        icon: "☀️",
+        text: "Morning, i’ll start my day with feeling fresh and prepared",
+      },
+      {
+        icon: "💤",
+        text: "Evening, i’ll do relaxing rituals before bed",
+      },
+    ],
+  },
+  {
+    name: "Quiz",
+    question: "Your Anti-Aging Plan is Ready!",
+    description:
+      "It’s designed to work at your pace. So, tell us: How quickly do you want to look young and healthy?",
+    type: "radio",
+    index: 36,
+    route: "quiz",
+    isHideBtnNextScreen: true,
     answers: [
       {
         icon: "",
@@ -1046,81 +1226,5 @@ export const quizList: QuizType[] = [
         text: "Somewhere between the two",
       },
     ],
-  },
-  {
-    name: "Quiz",
-    question:
-      "Do you have a specific reason to learn more about skin, hair and body?",
-    description:
-      "People with extra motivation are usually more likely to reach their goal",
-    type: "radio",
-    index: 32,
-    route: "quiz",
-    isHideBtnNextScreen: false,
-    answers: [
-      {
-        icon: "",
-        text: "I lost confidence and want to grab it back",
-      },
-      {
-        icon: "",
-        text: "I want to stop hiding my aging face under make-up",
-      },
-      {
-        icon: "",
-        text: "I want to impress those around me for a special occasion that is coming up soon",
-      },
-      {
-        icon: "",
-        text: "I’m afraid my partner will break up with me",
-      },
-      {
-        icon: "",
-        text: "I want to solve my beauty problems and focus on other important things",
-      },
-      {
-        icon: "",
-        text: "I want to create my own beauty ritual and stop being late to work",
-      },
-    ],
-  },
-  {
-    name: "Quiz",
-    question: "How soon are you planning to reach your target?",
-    description: "We will keep this in mind for your beauty journey",
-    type: "radio",
-    index: 33,
-    route: "quiz",
-    isHideBtnNextScreen: false,
-    answers: [
-      {
-        icon: "",
-        text: "In a month",
-      },
-      {
-        icon: "",
-        text: "In a few months",
-      },
-      {
-        icon: "",
-        text: "In the coming year",
-      },
-      {
-        icon: "",
-        text: "Skip this step",
-      },
-    ],
-  },
-  {
-    name: "TeaserFinalStep",
-    index: 33.1,
-    route: "quiz",
-    isHideBtnNextScreen: true,
-    data: {
-      image: imageTeaserFinalStep,
-      title: "The only skin, hair & body anti-aging program you will ever need",
-      text: "Based on your answers, we expect you to reach",
-      graphTitle: "Young-Looking Woman by May",
-    },
   },
 ];

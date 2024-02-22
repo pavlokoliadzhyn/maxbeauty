@@ -1,6 +1,5 @@
 import UrlLinkButton from "../../components/Button/UrlLink";
 import startImage from "../../assets/home/startImage.png";
-import "./home.scss";
 
 export const HomePage = () => {
   return (

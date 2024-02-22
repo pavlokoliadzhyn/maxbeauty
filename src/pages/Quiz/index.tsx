@@ -12,6 +12,7 @@ import {TeaserGraph} from "../../components/TeaserGraph";
 import {TeaserFacts} from "../../components/TeaserFacts";
 import {TeaserFinish} from "../../components/TeaserFinish";
 import {TeaserCalculating} from "../../components/TeaserCalculating";
+import {TeaserFinalStep} from "../../components/TeaserFinalStep";
 import {AppHeader} from "../../containers/AppHeader";
 import {AppFooter} from "../../containers/AppFooter";
 import {AppHeaderQuiz} from "../../containers/AppHeaderQuiz";
@@ -20,7 +21,7 @@ export const QuizPage = () => {
   const navigate = useNavigate();
   //const totalScreenCount = quizList.length;
   const totalQuizCount = quizList.filter((item) => item.name === "Quiz").length;
-  const [stepQuiz, setStepQuiz] = useState<number>(42);
+  const [stepQuiz, setStepQuiz] = useState<number>(0);
   const [questionStepNumber, setQuestionStepNumber] = useState(0);
   const [progressBarWidth, setProgressBarWidth] = useState(
     (questionStepNumber / totalQuizCount) * 100
@@ -30,23 +31,18 @@ export const QuizPage = () => {
 
   const [currentStep, setCurrentStep] = useState<number>(1);
 
-  console.log(quizName);
-
-  const onClickItem = () => {
-    navigate("/calculating", {replace: true});
-
+  const nextQuizStep = () => {
     setTimeout(() => {
       setStepQuiz(stepQuiz + 1);
       if (quizName === "Quiz") {
         setCurrentStep(currentStep + 1);
       }
+      setQuestionStepNumber(questionStepNumber + 1);
+      setProgressBarWidth(((questionStepNumber + 1) / totalQuizCount) * 100);
     }, 500);
-
-    setQuestionStepNumber(questionStepNumber + 1);
-    setProgressBarWidth(((questionStepNumber + 1) / totalQuizCount) * 100);
   };
 
-  const onBackClick = () => {
+  const prevQuizStep = () => {
     if (stepQuiz == 0) return;
 
     setTimeout(() => {
@@ -60,6 +56,36 @@ export const QuizPage = () => {
     setProgressBarWidth(((questionStepNumber - 1) / totalQuizCount) * 100);
   };
 
+  const onClickAnswer = (
+    event: React.MouseEvent<HTMLDivElement>,
+    answerType: string
+  ) => {
+    if (answerType === "radio") {
+      const parentElement = event.currentTarget.parentElement;
+      if (parentElement) {
+        parentElement.querySelectorAll(".item").forEach((item) => {
+          item.classList.remove("active");
+        });
+        event.currentTarget.classList.add("active");
+        nextQuizStep();
+      }
+    } else {
+      event.currentTarget.classList.add("active");
+    }
+  };
+
+  const onClickButton = () => {
+    nextQuizStep();
+  };
+
+  const onBackClick = () => {
+    prevQuizStep();
+  };
+
+  const onClickNextScreen = () => {
+    navigate("/result", {replace: true});
+  };
+
   switch (quizName) {
     case "Quiz":
       return (
@@ -68,20 +94,23 @@ export const QuizPage = () => {
             onBackClick={onBackClick}
             currentStep={currentStep}
             totalQuestions={totalQuizCount}
+            quizName={quizName}
           ></AppHeaderQuiz>
           <div className="quiz-box">
             <ProgressBar width={progressBarWidth}></ProgressBar>
             <div className="container">
               <QuizItem
                 questionItemData={questionItem}
-                onClickItem={onClickItem}
+                onClickAnswer={(event) =>
+                  onClickAnswer(event, questionItem.type || "radio")
+                }
               ></QuizItem>
             </div>
           </div>
           {questionItem.isHideBtnNextScreen && (
             <ContinueButton
               buttonText="Next"
-              onClickItem={onClickItem}
+              onClickItem={onClickButton}
             ></ContinueButton>
           )}
         </>
@@ -102,7 +131,7 @@ export const QuizPage = () => {
           </div>
           <ContinueButton
             buttonText="Continue"
-            onClickItem={onClickItem}
+            onClickItem={onClickButton}
           ></ContinueButton>
         </>
       );
@@ -115,7 +144,7 @@ export const QuizPage = () => {
             <div className="container">
               <AgeScreen
                 questionItemData={questionItem}
-                onClickItem={onClickItem}
+                onClickItem={onClickButton}
               ></AgeScreen>
             </div>
           </div>
@@ -135,7 +164,7 @@ export const QuizPage = () => {
               <TeaserStart questionItemData={questionItem}></TeaserStart>
               <ContinueButton
                 buttonText="Continue"
-                onClickItem={onClickItem}
+                onClickItem={onClickButton}
               ></ContinueButton>
             </div>
           </div>
@@ -156,7 +185,7 @@ export const QuizPage = () => {
           </div>
           <ContinueButton
             buttonText="Continue"
-            onClickItem={onClickItem}
+            onClickItem={onClickButton}
           ></ContinueButton>
         </>
       );
@@ -175,7 +204,7 @@ export const QuizPage = () => {
           </div>
           <ContinueButton
             buttonText="Continue"
-            onClickItem={onClickItem}
+            onClickItem={onClickButton}
           ></ContinueButton>
         </>
       );
@@ -196,7 +225,7 @@ export const QuizPage = () => {
           </div>
           <ContinueButton
             buttonText="Continue"
-            onClickItem={onClickItem}
+            onClickItem={onClickButton}
           ></ContinueButton>
         </>
       );
@@ -215,7 +244,28 @@ export const QuizPage = () => {
           </div>
           <ContinueButton
             buttonText="Continue"
-            onClickItem={onClickItem}
+            onClickItem={onClickButton}
+          ></ContinueButton>
+        </>
+      );
+    case "TeaserFinalStep":
+      return (
+        <>
+          <AppHeaderQuiz
+            onBackClick={onBackClick}
+            totalQuestions={totalQuizCount}
+          ></AppHeaderQuiz>
+          <div className="quiz-box">
+            <ProgressBar width={progressBarWidth}></ProgressBar>
+            <div className="container">
+              <TeaserFinalStep
+                questionItemData={questionItem}
+              ></TeaserFinalStep>
+            </div>
+          </div>
+          <ContinueButton
+            buttonText="Continue"
+            onClickItem={onClickNextScreen}
           ></ContinueButton>
         </>
       );
