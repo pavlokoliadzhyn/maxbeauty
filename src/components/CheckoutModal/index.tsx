@@ -24,9 +24,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
   return (
     <>
-      <div
-        className={isOpenModal ? "checkout-modal active" : "checkout - modal"}
-      >
+      <div className={isOpenModal ? "checkout-modal active" : "checkout-modal"}>
         <div className="container">
           <div className="modal-name">Checkout</div>
           <div className="title">
