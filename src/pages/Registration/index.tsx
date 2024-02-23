@@ -33,7 +33,7 @@ export const RegistartionScreen = () => {
               </div>
               <div className="form-group">
                 <a
-                  href="https://maxbeauty.learnworlds.com/start?msg=not-logged-in"
+                  href="https://maxbeauty.learnworlds.com/course/look-younger"
                   target="_blank"
                   className="get-button"
                 >
