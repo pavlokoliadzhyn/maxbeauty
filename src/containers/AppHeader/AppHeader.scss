@@ -13,12 +13,20 @@
     strong {
       color: #6c35d2;
     }
+
+    a {
+      color: #393939;
+      strong {
+        color: #6c35d2;
+      }
+    }
   }
   .menu {
     .open-menu {
       position: relative;
       width: 28px;
       height: 18px;
+      cursor: pointer;
 
       .line {
         position: absolute;

@@ -1,10 +1,35 @@
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import "./pricelist.scss";
 
-export const PriceList = () => {
-  const navigate = useNavigate();
-  const onClickNextScreen = () => {
-    navigate("/registration", {replace: true});
+interface PriceListProps {
+  clickOpenModal: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onSelectPackage: (index: number) => void;
+  packageList: {
+    name: string;
+    price: string;
+    oldprice: string;
+    perDayPrice: string;
+    popular: boolean;
+  }[];
+}
+
+export const PriceList: React.FC<PriceListProps> = ({
+  clickOpenModal,
+  onSelectPackage,
+  packageList,
+}) => {
+  const onClickPackages = (
+    event: React.MouseEvent<HTMLDivElement>,
+    i: number
+  ) => {
+    const parentElement = event.currentTarget.parentElement;
+    if (parentElement) {
+      parentElement.querySelectorAll(".price-item").forEach((item) => {
+        item.classList.remove("active");
+      });
+      event.currentTarget.classList.add("active");
+    }
+    onSelectPackage(i);
   };
 
   return (
@@ -14,46 +39,30 @@ export const PriceList = () => {
           <div className="title">Choose your plan</div>
         </div>
         <div className="price-list">
-          <div className="price-item">
-            <div className="icon-check"></div>
-            <div className="price-info">
-              <div className="name">1-WEEK</div>
-              <div className="price">
-                <span className="old">$13.99</span>$9.99
+          {packageList.map((item, i) => (
+            <div
+              className={
+                item.popular ? "price-item most-popular active" : "price-item"
+              }
+              onClick={(e) => onClickPackages(e, i)}
+              key={"price-" + i}
+            >
+              {item.popular && (
+                <div className="popular-label">Most Popular</div>
+              )}
+              <div className="icon-check"></div>
+              <div className="price-info">
+                <div className="name">{item.name}</div>
+                <div className="price">
+                  <span className="old">${item.oldprice}</span>${item.price}
+                </div>
+              </div>
+              <div className="price-per-day">
+                <span className="price">${item.perDayPrice}</span>
+                <span className="day">per day</span>
               </div>
             </div>
-            <div className="price-per-day">
-              <span className="price">$1.42</span>
-              <span className="day">per day</span>
-            </div>
-          </div>
-          <div className="price-item active most-popular">
-            <div className="popular-label">Most Popular</div>
-            <div className="icon-check"></div>
-            <div className="price-info">
-              <div className="name">1-MONTH</div>
-              <div className="price">
-                <span className="old">$33.99</span>$29.99
-              </div>
-            </div>
-            <div className="price-per-day">
-              <span className="price">$0.99</span>
-              <span className="day">per day</span>
-            </div>
-          </div>
-          <div className="price-item">
-            <div className="icon-check"></div>
-            <div className="price-info">
-              <div className="name">3-MONTH</div>
-              <div className="price">
-                <span className="old">$79.99</span>$59.99
-              </div>
-            </div>
-            <div className="price-per-day">
-              <span className="price">$0.67</span>
-              <span className="day">per day</span>
-            </div>
-          </div>
+          ))}
         </div>
         <div className="info">
           <div className="title">Subscription terms of use</div>
@@ -67,7 +76,7 @@ export const PriceList = () => {
           </div>
         </div>
         <div className="get-plan">
-          <button onClick={onClickNextScreen}>Continue</button>
+          <button onClick={clickOpenModal}>Continue</button>
         </div>
       </div>
     </>

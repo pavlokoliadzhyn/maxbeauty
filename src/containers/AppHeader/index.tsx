@@ -14,7 +14,9 @@ export const AppHeader = () => {
       <header className="header">
         <div className="container">
           <div className="logo">
-            <strong>Max</strong>Beauty
+            <NavLink to="/">
+              <strong>Max</strong>Beauty
+            </NavLink>
           </div>
           <div className="menu">
             <div className="open-menu" onClick={toggleMenu}>
@@ -45,16 +47,24 @@ export const AppHeader = () => {
               <NavLink to="/terms-of-use">Terms of use</NavLink>
             </li>
             <li>
-              <NavLink to="/privacy-policy">Privacy Policy</NavLink>{" "}
+              <NavLink to="/privacy-policy">Privacy Policy</NavLink>
             </li>
             <li>
-              <NavLink to="/money-back-policy">Money Back Policy</NavLink>{" "}
+              <NavLink to="/money-back-policy">Money Back Policy</NavLink>
             </li>
             <li>
-              <NavLink to="/subscription-terms">Subscription Terms</NavLink>{" "}
+              <NavLink to="/subscription-terms">Subscription Terms</NavLink>
             </li>
             <li>
               <NavLink to="/cookie-policy">Cookie policy</NavLink>
+            </li>
+            <li>
+              <a
+                href="https://maxbeauty.learnworlds.com/course/look-younger"
+                target="_blank"
+              >
+                Log in
+              </a>
             </li>
           </ul>
         </div>

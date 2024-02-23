@@ -1,6 +1,13 @@
 import "./discounttimer.scss";
 
 export const DiscountTimer = () => {
+  const handleClickScroll = () => {
+    const element = document.getElementById("price");
+    if (element) {
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  };
+
   return (
     <>
       <div className="timer-box">
@@ -9,7 +16,7 @@ export const DiscountTimer = () => {
           <div className="timer">09:59</div>
         </div>
         <div className="get-plan">
-          <button>Continue</button>
+          <button onClick={handleClickScroll}>Continue</button>
         </div>
       </div>
     </>

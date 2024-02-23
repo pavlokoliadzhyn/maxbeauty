@@ -10,6 +10,10 @@ export const ResultPage = () => {
     navigate("/email", {replace: true});
   };
 
+  setTimeout(() => {
+    navigate("/email", {replace: true});
+  }, 7000);
+
   return (
     <>
       <AppHeader></AppHeader>

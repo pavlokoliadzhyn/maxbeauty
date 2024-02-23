@@ -131,7 +131,7 @@ export const quizList: QuizType[] = [
     type: "radio",
     index: 4,
     route: "quiz",
-    isHideBtnNextScreen: false,
+    isHideBtnNextScreen: true,
     answers: [
       {
         imageUrl: true,
@@ -600,7 +600,7 @@ export const quizList: QuizType[] = [
   },
   {
     name: "TeaserFacts",
-    index: 17.1,
+    index: 16.1,
     route: "quiz",
     isHideBtnNextScreen: true,
     data: {
@@ -855,7 +855,7 @@ export const quizList: QuizType[] = [
     type: "radio",
     index: 25,
     route: "quiz",
-    isHideBtnNextScreen: true,
+    isHideBtnNextScreen: false,
     answers: [
       {
         icon: "😎",
@@ -881,7 +881,7 @@ export const quizList: QuizType[] = [
     type: "radio",
     index: 26,
     route: "quiz",
-    isHideBtnNextScreen: true,
+    isHideBtnNextScreen: false,
     answers: [
       {
         icon: "",
@@ -1022,7 +1022,7 @@ export const quizList: QuizType[] = [
     data: {
       image: imageTeaserFinish,
       title: "Only a few questions left till your Anti-Aging Beauty Plan ready",
-      text: "Remember, with our personalized program, you can eliminate all your skin problems healthier and faster",
+      text: "Remember, with our personalized program, you can eliminate age-related problems healthier and faster",
     },
   },
   {

@@ -11,6 +11,7 @@
       border: 1px solid rgba($color: #000, $alpha: 0.1);
       border-radius: 5px;
       overflow: hidden;
+      cursor: pointer;
 
       &.most-popular {
         height: 92px;
@@ -29,9 +30,9 @@
         height: 24px;
         font-size: 16px;
         font-weight: 700;
-        color: var(--White);
+        color: var(--Taupe-Gray);
         border-radius: 10px 10px 0px 0px;
-        background: var(--Violets-Are-Blue);
+        background: rgba($color: #000, $alpha: 0.1);
       }
 
       .icon-check {
@@ -94,11 +95,21 @@
         }
       }
 
+      &.most-popular {
+        .icon-check {
+          margin-top: 12px;
+        }
+      }
+
       &.active {
         border: 1px solid var(--Violets-Are-Blue);
 
+        .popular-label {
+          color: var(--White);
+          background: var(--Violets-Are-Blue);
+        }
+
         .icon-check {
-          margin-top: 12px;
           border: 1px solid var(--Violets-Are-Blue);
 
           &:before {

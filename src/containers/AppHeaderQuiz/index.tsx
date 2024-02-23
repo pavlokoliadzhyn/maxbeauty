@@ -98,6 +98,14 @@ export const AppHeaderQuiz: React.FC<AppHeaderQuizProps> = ({
             <li>
               <NavLink to="/cookie-policy">Cookie policy</NavLink>
             </li>
+            <li>
+              <a
+                href="https://maxbeauty.learnworlds.com/course/look-younger"
+                target="_blank"
+              >
+                Log in
+              </a>
+            </li>
           </ul>
         </div>
       </div>

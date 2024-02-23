@@ -16,7 +16,10 @@ export const AppFooter = () => {
           <footer>
             <div className="container">
               <p className="copyright">
-                2024 @ All Rights Reserved. By continuing you agree to our{" "}
+                Georgoiou A, 83, Shop 17, Potamos Germasogeias, Limassol, 4047,
+                Cyprus
+                <br />
+                By continuing you agree to our{" "}
                 <NavLink to="/terms-of-use">Terms of use</NavLink> |{" "}
                 <NavLink to="/privacy-policy">Privacy Policy</NavLink> |{" "}
                 <NavLink to="/money-back-policy">Money Back Policy</NavLink> |{" "}

@@ -14,7 +14,7 @@ export const RegistartionScreen = () => {
       <div className="email-box">
         <div className="container">
           <div className="heading-box">
-            <div className="title">Your Anti-Aging Plan is Ready!</div>
+            <div className="title">Get Access to Your Plan!</div>
             <div className="text">Enter your data to get started</div>
           </div>
           <div className="form-box">
@@ -32,7 +32,13 @@ export const RegistartionScreen = () => {
                 <input type="password" placeholder="Repeat password" />
               </div>
               <div className="form-group">
-                <button type="submit">Registration</button>
+                <a
+                  href="https://maxbeauty.learnworlds.com/course/look-younger"
+                  target="_blank"
+                  className="get-button"
+                >
+                  Continue
+                </a>
               </div>
             </form>
           </div>

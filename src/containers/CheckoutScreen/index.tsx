@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {AppHeader} from "../AppHeader";
 import {AppFooter} from "../AppFooter";
 import {DiscountTimer} from "../../components";
@@ -9,9 +10,24 @@ import {FaqList} from "../../components/FaqList";
 import {ReviewList} from "../../components";
 import {MoneyBack} from "../../components";
 import imageGraph from "../../assets/checkout/graph.png";
+
+import {CheckoutModal} from "../../components/CheckoutModal";
+
+import {packageList} from "../../_schemes/packageList";
 import "./checkoutscreen.scss";
 
 export const CheckoutScreen = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [packageIndex, setPackageIndex] = useState(1);
+
+  const clickOpenModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
+
+  const onSelectPackage = (index: number) => {
+    setPackageIndex(index);
+  };
+
   return (
     <>
       <AppHeader></AppHeader>
@@ -26,17 +42,30 @@ export const CheckoutScreen = () => {
               <img src={imageGraph} alt="" />
             </div>
           </div>
-
-          <PriceList></PriceList>
+          <div id="price"></div>
+          <PriceList
+            packageList={packageList}
+            clickOpenModal={clickOpenModal}
+            onSelectPackage={onSelectPackage}
+          ></PriceList>
           <BenefitBox></BenefitBox>
           <FeaturedBox></FeaturedBox>
           <NumberBox></NumberBox>
           <FaqList></FaqList>
           <ReviewList></ReviewList>
-          <PriceList></PriceList>
+          <PriceList
+            packageList={packageList}
+            clickOpenModal={clickOpenModal}
+            onSelectPackage={onSelectPackage}
+          ></PriceList>
           <MoneyBack></MoneyBack>
         </div>
       </div>
+
+      <CheckoutModal
+        isOpenModal={isOpenModal}
+        packageIndex={packageIndex}
+      ></CheckoutModal>
       <AppFooter></AppFooter>
     </>
   );

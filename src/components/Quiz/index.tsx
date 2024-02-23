@@ -15,6 +15,7 @@ export const QuizItem: React.FC<QuestionItemProps> = ({
   onClickAnswer,
 }) => {
   const questionType = questionItemData.type || "radio";
+  const questionIndex = questionItemData.index;
 
   return (
     <>
@@ -47,7 +48,7 @@ export const QuizItem: React.FC<QuestionItemProps> = ({
             questionItemData.answers.map((item, index) => (
               <div
                 className="item"
-                key={index}
+                key={questionIndex + "-" + index}
                 onClick={(event) => onClickAnswer(event, questionType)}
               >
                 {item.icon && (
