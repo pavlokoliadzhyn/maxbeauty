@@ -21,7 +21,7 @@ export const QuizPage = () => {
   const navigate = useNavigate();
   //const totalScreenCount = quizList.length;
   const totalQuizCount = quizList.filter((item) => item.name === "Quiz").length;
-  const [stepQuiz, setStepQuiz] = useState<number>(0);
+  const [stepQuiz, setStepQuiz] = useState<number>(33);
   const [questionStepNumber, setQuestionStepNumber] = useState(0);
   const [progressBarWidth, setProgressBarWidth] = useState(
     (questionStepNumber / totalQuizCount) * 100
