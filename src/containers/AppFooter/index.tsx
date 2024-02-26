@@ -1,6 +1,6 @@
 import {useLocation} from "react-router-dom";
 import {NavLink} from "react-router-dom";
-import "./AppFooter.scss";
+import "./style.scss";
 
 export const AppFooter = () => {
   const location = useLocation();

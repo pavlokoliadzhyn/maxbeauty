@@ -1,5 +1,5 @@
 import {NavLink} from "react-router-dom";
-import "./moneyback.scss";
+import "./style.scss";
 
 export const MoneyBack = () => {
   return (

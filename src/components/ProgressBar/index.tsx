@@ -1,4 +1,4 @@
-import "./ProgressBar.scss";
+import "./style.scss";
 
 interface ProgressBarProps {
   width: number;

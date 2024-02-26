@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
-import "./AppHeader.scss";
+import "./style.scss";
 
 export const AppHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);

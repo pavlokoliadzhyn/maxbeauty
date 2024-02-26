@@ -1,21 +1,22 @@
 import {createBrowserRouter} from "react-router-dom";
 
-import {MainLayout} from "../layouts";
-import {QuizPage} from "../pages";
-import {EmailPage} from "../pages";
-import {RegistartionScreen} from "../pages/Registration";
-import {CalculatingPage} from "../pages";
-import {ResultPage} from "../pages";
-import {ErrorPage} from "../pages";
-import {StartScreen} from "../containers";
-import {CheckoutScreen} from "../containers/";
-import {SimplePage} from "../pages/SimplePage";
+import {
+  MainLayout,
+  StartScreen,
+  QuizScreen,
+  EmailScreen,
+  RegistrationScreen,
+  ResultScreen,
+  CheckoutScreen,
+} from "../layouts";
 
-import {TermsOfUse} from "../_schemes/pages/TermsOfUse";
-import {PrivacyPolicy} from "../_schemes/pages/PrivacyPolicy";
-import {MoneyBackPolicy} from "../_schemes/pages/money.back.policy";
-import {SubscriptionPolicy} from "../_schemes/pages/subscription.terms";
-import {CookiePolicy} from "../_schemes/pages/cookie.policy";
+import {ErrorPage, SimplePage} from "../pages";
+
+import {TermsOfUse} from "../data/pages/TermsOfUse";
+import {PrivacyPolicy} from "../data/pages/PrivacyPolicy";
+import {MoneyBackPolicy} from "../data/pages/money.back.policy";
+import {SubscriptionPolicy} from "../data/pages/subscription.terms";
+import {CookiePolicy} from "../data/pages/cookie.policy";
 
 export const router = createBrowserRouter([
   {
@@ -30,15 +31,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/quiz",
-        element: <QuizPage />,
+        element: <QuizScreen />,
       },
       {
         path: "/result",
-        element: <ResultPage />,
+        element: <ResultScreen />,
       },
       {
-        path: "/calculating",
-        element: <CalculatingPage />,
+        path: "/email",
+        element: <EmailScreen />,
       },
       {
         path: "/checkout",
@@ -46,11 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/registration",
-        element: <RegistartionScreen />,
-      },
-      {
-        path: "/email",
-        element: <EmailPage />,
+        element: <RegistrationScreen />,
       },
       {
         path: "/terms-of-use",

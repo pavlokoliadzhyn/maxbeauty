@@ -4,4 +4,4 @@ export {PriceList} from "./PriceList";
 export {ReviewList} from "./ReviewList";
 export {MoneyBack} from "./MoneyBack";
 export {StarIcon} from "./Star";
-export {TeaserStart} from "./TeaserStart";
+export {TeaserStart} from "../containers/Teasers/TeaserStart";

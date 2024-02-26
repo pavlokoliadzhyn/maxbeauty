@@ -3,7 +3,7 @@ import imageLogo2 from "../../assets/checkout/logo/logo2.png";
 import imageLogo3 from "../../assets/checkout/logo/logo3.png";
 import imageLogo4 from "../../assets/checkout/logo/logo4.png";
 import imageLogo5 from "../../assets/checkout/logo/logo5.png";
-import "./featuredbox.scss";
+import "./style.scss";
 
 export const FeaturedBox = () => {
   return (

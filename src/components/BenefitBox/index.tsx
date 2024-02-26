@@ -1,5 +1,5 @@
-import {benefitList} from "../../_schemes/benefit.list";
-import "./benefitbox.scss";
+import {benefitList} from "../../data/benefit.list";
+import "./style.scss";
 
 export const BenefitBox = () => {
   return (

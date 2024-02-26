@@ -1,6 +1,6 @@
-import {numberList} from "../../_schemes/number.list";
+import {numberList} from "../../data/number.list";
 import imageNumberBox from "../../assets/checkout/number.png";
-import "./numberbox.scss";
+import "./style.scss";
 
 export const NumberBox = () => {
   return (

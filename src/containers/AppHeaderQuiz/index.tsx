@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
-import "./headerquiz.scss";
+import "./style.scss";
 
 interface AppHeaderQuizProps {
   currentStep?: number;

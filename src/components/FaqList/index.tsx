@@ -1,5 +1,5 @@
-import {faqList} from "../../_schemes/faq.list";
-import "./faqlist.scss";
+import {faqList} from "../../data/faq.list";
+import "./style.scss";
 
 export const FaqList = () => {
   return (

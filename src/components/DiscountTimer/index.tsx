@@ -1,4 +1,4 @@
-import "./discounttimer.scss";
+import "./style.scss";
 
 export const DiscountTimer = () => {
   const handleClickScroll = () => {

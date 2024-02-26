@@ -3,9 +3,9 @@ import {NavLink, useNavigate} from "react-router-dom";
 import imageCard from "../../assets/checkout/card.png";
 import imageCardList from "../../assets/checkout/card_list.png";
 
-import {packageList} from "../../_schemes/packageList";
+import {packageList} from "../../data/packageList";
 
-import "./checkoutmodal.scss";
+import "./style.scss";
 import React from "react";
 
 interface CheckoutModalProps {

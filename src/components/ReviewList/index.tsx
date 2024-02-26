@@ -1,6 +1,6 @@
-import {reviewList} from "../../_schemes/review.list";
+import {reviewList} from "../../data/review.list";
 import {StarIcon} from "../Star";
-import "./reviewlist.scss";
+import "./style.scss";
 
 export const ReviewList = () => {
   return (

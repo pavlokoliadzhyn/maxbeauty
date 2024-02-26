@@ -7,12 +7,12 @@ import megaphoneImage from "../../assets/quiz/age/megaphone.png";
 import {QuizType} from "../../types/general";
 import "./style.scss";
 
-interface AgeItemProps {
+interface AgeQuestionProps {
   questionItemData: QuizType;
   onClickItem: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export const AgeItem: React.FC<AgeItemProps> = ({
+export const AgeQuestion: React.FC<AgeQuestionProps> = ({
   questionItemData,
   onClickItem,
 }) => {

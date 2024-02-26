@@ -1,5 +1,5 @@
 import {NavLink} from "react-router-dom";
-import "./pricelist.scss";
+import "./style.scss";
 
 interface PriceListProps {
   clickOpenModal: (event: React.MouseEvent<HTMLButtonElement>) => void;

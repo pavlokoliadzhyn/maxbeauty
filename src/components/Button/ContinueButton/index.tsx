@@ -1,5 +1,5 @@
 import React from "react";
-import "./ContinueButton.scss";
+import "./style.scss";
 
 interface ContinueButtonProps {
   buttonText: string;
